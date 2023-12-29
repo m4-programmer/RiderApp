@@ -4,7 +4,7 @@ import { COLORS, appMode, icons } from '../../../constants/Index'
 
 const FooterComponent = ({id, mode}) => {
   return (
-    <View className='flex-row justify-between items-center flex-row  mx-5' >
+    <View className='justify-between items-center flex-row  mx-5' >
 
         <View className='flex-col justify-evenly items-start mt-2'>
             <Image source={id % 2 !== 0 ? icons.Navigation : icons.NavigationOrange} className='h-23 w-23 mb-2' resizeMode='contain' />
