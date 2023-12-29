@@ -23,7 +23,7 @@ const COLORS = {
 const typography = {
     header1(mode='dark') {
         return {
-            fontFamily: "inter",
+            // fontFamily: "inter",
             fontWeight: "semibold",
             fontSize: 32,
             lineHeight: 32,
@@ -32,7 +32,7 @@ const typography = {
     },
     header2(mode='dark') {
         return {
-            fontFamily: "inter",
+            // fontFamily: "inter",
             fontWeight: "700",
             fontSize: 28,
             lineHeight: 32,
@@ -52,7 +52,7 @@ const typography = {
 
     body2(mode='dark',weight="regular") {
         return {
-            fontFamily: "inter",
+            // fontFamily: "inter",
             fontWeight: weight==="regular" ? "normal" : weight,
             fontSize: 16,
             lineHeight: 24,
@@ -61,7 +61,7 @@ const typography = {
     },
     bodySmall(mode='dark',weight="regular") {
         return {
-            fontFamily: "inter",
+            // fontFamily: "inter",
             fontWeight: weight==="regular" ? "normal" : weight,
             fontSize: 14,
             lineHeight: 24,
@@ -70,7 +70,7 @@ const typography = {
     },
     bodyExtraSmall(mode='dark',weight="regular") {
         return {
-            fontFamily: "inter",
+            // fontFamily: "inter",
             fontWeight: weight==="regular" ? "normal" : weight,
             fontSize: 12,
             lineHeight: 24,
