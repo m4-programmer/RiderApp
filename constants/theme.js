@@ -33,8 +33,8 @@ const typography = {
     header2(mode='dark') {
         return {
             fontFamily: "inter",
-            fontWeight: "semibold",
-            fontSize: 24,
+            fontWeight: "700",
+            fontSize: 28,
             lineHeight: 32,
             color: mode === "dark" ? COLORS.textDark : COLORS.lightMode,
         };
@@ -42,10 +42,10 @@ const typography = {
 
     body1(mode='dark',weight="regular") {
         return {
-            fontFamily: "inter",
-            fontWeight: weight==="regular" ? "normal" : weight,
+            // fontFamily: "Urbanist",
+            fontWeight: weight==="regular" ? 400 : weight,
             fontSize: 18,
-            lineHeight: 24,
+            lineHeight: 30,
             color: mode === "dark" ? COLORS.textDark : COLORS.lightMode,
         };
     },
