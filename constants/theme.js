@@ -24,7 +24,7 @@ const typography = {
     header1(mode='dark') {
         return {
             fontFamily: "inter",
-            fontWeight: "semi-bold",
+            fontWeight: "semibold",
             fontSize: 32,
             lineHeight: 32,
             color: mode === "dark" ? COLORS.textDark : COLORS.lightMode,
@@ -33,7 +33,7 @@ const typography = {
     header2(mode='dark') {
         return {
             fontFamily: "inter",
-            fontWeight: "semi-bold",
+            fontWeight: "semibold",
             fontSize: 24,
             lineHeight: 32,
             color: mode === "dark" ? COLORS.textDark : COLORS.lightMode,
