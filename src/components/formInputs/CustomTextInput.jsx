@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
         height: 70,
         padding: 15,
         marginHorizontal: 7,
-        width: widthPercentage
-
+        width: widthPercentage,
+        marginVertical: 5,
       }
   },
   input: {
