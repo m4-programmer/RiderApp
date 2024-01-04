@@ -4,15 +4,18 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { CustomButton, CustomText, CustomTextInput, Margin } from '../../components'
 import { COLORS } from '../../../constants/theme';
 import { appMode, icons } from '../../../constants/Index';
+import { useNavigation } from '@react-navigation/native';
 
 const GetYouInScreen = () => {
   const mode = 'dark'; //in the future this can come from state or asyn storage
   const statusBar = appMode.dark === mode ? 'light-content' : 'dark-content'
-  const Login = () =>{
 
+  const navigation = useNavigation();
+  const Login = () =>{
+    navigation.navigate('Login')
   }
   const SignUp = () => {
-
+    navigation.navigate('Signup')
   }
   return (
     <SafeAreaView className='flex-1' style={styles.container}>
