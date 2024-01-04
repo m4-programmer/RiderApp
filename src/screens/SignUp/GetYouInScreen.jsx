@@ -52,7 +52,5 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.darkMode,
     alignItems: 'center',
     justifyContent: 'center',
-    
-    
   }
 })
