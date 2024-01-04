@@ -3,9 +3,9 @@ import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { COLORS, typography } from '../../../constants/theme';
 
-const CustomButton = ({text, textColor, bgColor=COLORS.primary3, onPressed}) => {
+const CustomButton = ({text, textColor, bgColor=COLORS.primary3, width, onPressed}) => {
   return (
-    <TouchableOpacity style={[styles.container,{backgroundColor: bgColor}]} onPress={onPressed}>
+    <TouchableOpacity style={[styles.container,{backgroundColor: bgColor,width: width ?? '100%'}]} onPress={onPressed}>
       <Text style={[typography.body1('dark'), styles.text,{color: textColor}]}>{text}</Text>
     </TouchableOpacity>
   )
