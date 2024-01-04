@@ -16,7 +16,11 @@ const COLORS = {
     textDark2: "#292B2D",
     textSecondary: "#616161",
     textTertiary : "#6C727F",
-    textLast: "#7B8186"
+    textLast: "#7B8186",
+
+    //text input color
+    inputColor: "#1F222A",
+    mildLight: "#9E9E9E",
     
 }
 
