@@ -1,15 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../../constants/theme'
 
-const CustomText = ({text, weight, size, paddingHorizontal, fontFamily, color,childrenColor, align,children,lineHeight  }) => {
+const CustomText = ({text, weight, size, paddingHorizontal, fontFamily, color,childrenColor, align,children,lineHeight,childIsLink,navigateChild  }) => {
   return (
-    <View>
+    <Pressable>
       <Text style={styles.text(weight, size, paddingHorizontal, fontFamily, color, align,lineHeight)}>{text} 
-            <Text style={{color: childrenColor}}>{children}</Text> 
+            {childIsLink ? (
+          <TouchableOpacity onPress={navigateChild} >
+            <Text style={{ color: childrenColor ,}}>{children}</Text>
+          </TouchableOpacity>
+        ) : (
+          <Text style={{ color: childrenColor }}>{children}</Text>
+        )}
       </Text>
       
-    </View>
+    </Pressable>
   )
 }
 
@@ -24,7 +30,12 @@ const styles = StyleSheet.create({
             paddingHorizontal: paddingHorizontal,
             fontFamily: fontFamily,
             color: color ?? COLORS.lightMode,
-            lineHeight: lineHeight
+            lineHeight: lineHeight,
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'row',
+            flexWrap: 'wrap'
+            
         }
     }
 })
