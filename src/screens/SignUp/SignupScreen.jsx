@@ -1,6 +1,6 @@
 import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { COLORS } from '../../../constants/theme'
-import { CustomButton, CustomText, CustomTextInput, Margin } from '../../components'
+import { BackButtonHeader, CustomButton, CustomText, CustomTextInput, Margin } from '../../components'
 import { useState } from 'react'
 import * as Icons from "react-native-heroicons/solid";
 import { useNavigation } from '@react-navigation/native';
@@ -23,9 +23,7 @@ function SignupScreen() {
   return (
     <SafeAreaView style={{backgroundColor: COLORS.darkMode,flex:1}}>
         {/* Create View for Header Component */}
-        <View className="flex flex-row" style={styles.header}>
-            <Text>Back Button</Text>
-        </View>
+        <BackButtonHeader />
         {/* Body Section */}
         <ScrollView style={styles.body} className='px-2' keyboardShouldPersistTaps='' bounces={false}>
             {/* <View style={{paddingHorizontal: 10,}}> */}
@@ -79,9 +77,7 @@ function SignupScreen() {
 
 export default SignupScreen
 const styles = StyleSheet.create({  
-    header: {
-        height: 50,
-    },
+ 
     body: {
 
     },
