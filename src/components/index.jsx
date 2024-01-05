@@ -5,7 +5,9 @@ import CustomButton from "./buttons/CustomButton";
 import CustomTextInput from "./formInputs/CustomTextInput";
 import CustomText from "./texts/CustomText";
 import Margin from "./helper/Margin";
-export {CustomButton, CustomTextInput, CustomText, Margin}
+import BackButtonHeader from "./helper/BackButtonHeader";
+
+export {CustomButton, CustomTextInput, CustomText, Margin, BackButtonHeader}
 
 export default {
     HeadingComponent,
