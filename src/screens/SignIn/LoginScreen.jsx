@@ -1,11 +1,19 @@
 import { StyleSheet, Text, View,SafeAreaView, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { BackButtonHeader, CustomButton, CustomText, CustomTextInput, Margin, generalStyle } from '../../components'
 import { COLORS } from '../../../constants/theme'
 import { useNavigation } from '@react-navigation/native'
 
 const LoginScreen = () => {
     const navigation = useNavigation()
+    const [user,setUser] = useState({
+        email: null,
+        password: null,
+        rememberMe: false
+    })
+    const Login = () => {
+        console.log(user);
+    }
   return (
     <SafeAreaView style={[generalStyle.body,]}>
       {/* Back Button */}
@@ -15,9 +23,9 @@ const LoginScreen = () => {
 
         <Margin vertical={15} />
         {/* Input Form */}
-        <CustomTextInput text={"Email"} inputType='email' value="" setValue="" />
+        <CustomTextInput text={"Email"} inputType='email' value={user.email} setValue={(e)=>{setUser({...user, email:e })}} />
         
-        <CustomTextInput text={"Password"} inputType='text' secure={true} value="" setValue="" />
+        <CustomTextInput text={"Password"} inputType='text' secure={true} value={user.password} setValue={(e)=>{setUser({...user, password:e })}} />
         {/* Part for Showing Forgot password Link and Remember me button */}
         <View style={styles.flexBox} className='px-2'>
             <View>
@@ -30,7 +38,7 @@ const LoginScreen = () => {
 
         </View>
 
-        <CustomButton text={"Login"} />
+        <CustomButton text={"Login"} onPressed={Login} />
         <Margin vertical={5} />
         <CustomText text="You don't have an account? " childIsLink={true} navigateChild={() => navigation.navigate('Signup')} weight="500" size={14} childrenColor={COLORS.primary}>
                  Signup
