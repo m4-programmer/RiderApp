@@ -19,6 +19,8 @@ function SignupScreen() {
     const navigation = useNavigation()
     const SignUp = () => {
         console.log(user);
+        alert("Signup successful")
+        navigation.navigate('VerifyAccount')
     }
   return (
     <SafeAreaView style={{backgroundColor: COLORS.darkMode,flex:1}}>
