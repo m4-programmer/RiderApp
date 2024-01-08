@@ -18,7 +18,7 @@ const UploadPictureScreen = () => {
         <Margin vertical={15} />
         <View>
           <CustomText text={'Upload Your Picture'} weight={600} />
-          <Text className='text-white align-middle px-2 mt-4' style={{fontSize: 16}}>
+          <Text className='text-white align-middle px-2 mt-4 text-center' style={{fontSize: 16}}>
             Please upload a clear picture of yourself, with high-resolution images
           </Text>
           <Margin vertical={50} />

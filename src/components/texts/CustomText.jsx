@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         return {
             fontWeight: weight ?? '800',
             fontSize: size ?? 36,
-            alignSelf: align ?? 'center',
+            textAlign: align ?? 'center',
             paddingHorizontal: paddingHorizontal,
             fontFamily: fontFamily,
             color: color ?? COLORS.lightMode,
