@@ -1,15 +1,30 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import React, { useState } from 'react'
 import { BackButtonHeader, CustomButton, CustomText, Margin, generalStyle } from '../../components'
 import { COLORS } from '../../../constants/theme'
 import * as Icons from "react-native-heroicons/solid";
+import * as ImagePicker from 'expo-image-picker';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 const UploadPictureScreen = () => {
+  const [image, setSelectedImage] = useState(null);
   const Continue = () =>{
     
   }
-  const Upload = () =>{
-    alert("upload is working")
-    //to write logic that will handle image uploads
+  const Upload = async() =>{
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    }
+  
+    //todo: to write logic that will send the image to the backend
   }
   return (
     <SafeAreaView style={generalStyle.body}>
@@ -24,9 +39,11 @@ const UploadPictureScreen = () => {
           <Margin vertical={50} />
           {/* Upload Picture Button */}
           <Uploader Upload={Upload} />
+          {image && (
+          <Image source={{ uri: image }} style={{ width: widthPercentageToDP(92), height: 200, marginTop: 15 }} resizeMode='cover' />)}
         </View>
 
-        <Margin vertical={150} />
+        <Margin vertical={image ? heightPercentageToDP(7) : heightPercentageToDP(15)} />
         <View>
           <CustomButton onPressed={Continue} text={"Continue"} />
         </View>
