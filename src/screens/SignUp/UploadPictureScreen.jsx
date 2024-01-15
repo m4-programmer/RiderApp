@@ -1,14 +1,30 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import React, { useState } from 'react'
-import { BackButtonHeader, CustomButton, CustomText, Margin, generalStyle } from '../../components'
+import { BackButtonHeader, CustomButton, CustomText, Margin, SuccessModal, generalStyle } from '../../components'
 import { COLORS } from '../../../constants/theme'
 import * as Icons from "react-native-heroicons/solid";
 import * as ImagePicker from 'expo-image-picker';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 const UploadPictureScreen = () => {
   const [image, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const navigation = useNavigation();
+  const [error, setError] = useState(null);
+  const toggleModal = () =>{
+    setShowModal(!showModal);
+    setTimeout(() => setShowModal(false), 3000);
+    //to add logic to navigate user to the next screen here
+    //navigation.navigate('SignUp')
+  }
   const Continue = () =>{
-    
+    if (!image) {
+      setError("Please select an image");
+      setTimeout(() => setError(null), 5000);
+    }else{
+      //todo: to send image to api, or store in state
+      toggleModal();
+    }
   }
   const Upload = async() =>{
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -29,6 +45,7 @@ const UploadPictureScreen = () => {
   return (
     <SafeAreaView style={generalStyle.body}>
       <BackButtonHeader />
+      <SuccessModal visible={showModal} />
       <ScrollView className='px-2 mx-2' >
         <Margin vertical={15} />
         <View>
@@ -39,6 +56,13 @@ const UploadPictureScreen = () => {
           <Margin vertical={50} />
           {/* Upload Picture Button */}
           <Uploader Upload={Upload} />
+
+          {/* Error message section */}
+          {error && (
+          <Text className='text-red-500 text-center pt-3' style={{fontSize: 18}}>
+            {error}
+          </Text>
+          )}
           {image && (
           <Image source={{ uri: image }} style={{ width: widthPercentageToDP(92), height: 200, marginTop: 15 }} resizeMode='cover' />)}
         </View>
@@ -46,7 +70,9 @@ const UploadPictureScreen = () => {
         <Margin vertical={image ? heightPercentageToDP(7) : heightPercentageToDP(15)} />
         <View>
           <CustomButton onPressed={Continue} text={"Continue"} />
+          
         </View>
+        
         
       </ScrollView>
     </SafeAreaView>
