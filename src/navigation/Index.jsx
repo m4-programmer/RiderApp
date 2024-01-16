@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import WelcomeScreen from '../screens/WelcomeScreen'
 import OnboardingScreen from '../screens/OnboardingScreen'
 import GetYouInScreen from '../screens/SignUp/GetYouInScreen'
-import { LoginScreen, SignupScreen, UploadPictureScreen, VerifyAccount } from '../screens'
+import { LandingScreen, LoginScreen, OnboardingChoiceScreen, SignupScreen, UploadPictureScreen, VerifyAccount } from '../screens'
 
 const Stack = createNativeStackNavigator()
 
@@ -19,6 +19,8 @@ const AppNavigation = () => {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="VerifyAccount" component={VerifyAccount} />
         <Stack.Screen name="UploadPicture" component={UploadPictureScreen} />
+        <Stack.Screen name="LandingScreen" component={LandingScreen} />
+        <Stack.Screen name="OnboardingChoice" component={OnboardingChoiceScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
