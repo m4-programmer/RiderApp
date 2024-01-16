@@ -15,7 +15,7 @@ const UploadPictureScreen = () => {
     setShowModal(!showModal);
     setTimeout(() => setShowModal(false), 3000);
     //to add logic to navigate user to the next screen here
-    //navigation.navigate('SignUp')
+    navigation.navigate('LandingScreen');
   }
   const Continue = () =>{
     if (!image) {
