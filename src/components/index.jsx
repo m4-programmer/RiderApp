@@ -8,7 +8,9 @@ import Margin from "./helper/Margin";
 import BackButtonHeader from "./helper/BackButtonHeader";
 import generalStyle from "./helper/bodyStyle";
 import SuccessModal from "./Modal/SuccessModal";
-export {CustomButton, CustomTextInput, CustomText, Margin, BackButtonHeader,generalStyle, SuccessModal}
+import CustomDropdownInput from "./formInputs/CustomDropdownInput";
+
+export {CustomButton, CustomTextInput, CustomText, Margin, BackButtonHeader,generalStyle, SuccessModal,CustomDropdownInput}
 
 export default {
     HeadingComponent,
