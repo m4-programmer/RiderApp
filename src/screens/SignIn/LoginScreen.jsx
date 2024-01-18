@@ -12,7 +12,6 @@ const LoginScreen = () => {
         rememberMe: false
     })
     const Login = () => {
-        console.log(user);
         navigation.navigate('HomeScreen')
     }
   return (
