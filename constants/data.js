@@ -36,3 +36,49 @@ export const splashData = [
         img: images.Img2
     }
 ]
+
+export const onboardingOptions = [
+    {
+        id: 1,
+        title: "Drivers License",
+        subTitle: "Please upload your drivers license",
+        extraDescription: "All four sides of the license should be photographed. Ensure that the license number in the top-left-hand \
+        corner is clearly visible in the image photographed",
+        screenType: "image",
+    },
+    {
+        id: 2,
+        title: "Vehicle Registration",
+        subTitle: "Please upload your Vehicle Registration",
+        extraDescription: "Please provide accurate registration number",
+        screenType: "form",
+    },
+    {
+        id: 3,
+        title: "Insurance",
+        subTitle: "Please provide all the insurance for your vehicle",
+        extraDescription: "All four sides of the document should be visible",
+        screenType: "image",
+    },
+    {
+        id: 4,
+        title: "Upload Vehicle Image",
+        subTitle: "Please provide a high resolution of your vehicle",
+        extraDescription: "Upload high resolution image (JPEG or PNG)",
+        screenType: "image",
+    },
+    {
+        id: 5,
+        title: "Businesses",
+        subTitle: "Register under any business of your choice",
+        extraDescription: "Select the business you want",
+        screenType: "dropdown",
+    },
+    {
+        id: 6,
+        title: "Emergency Contact",
+        subTitle: "Please provide us with an emergency contact",
+        extraDescription: "Please provide us with an emergency contact",
+        screenType: "form",
+    },
+]
