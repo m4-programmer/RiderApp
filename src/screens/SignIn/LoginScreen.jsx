@@ -13,6 +13,7 @@ const LoginScreen = () => {
     })
     const Login = () => {
         console.log(user);
+        navigation.navigate('HomeScreen')
     }
   return (
     <SafeAreaView style={[generalStyle.body,]}>
