@@ -5,6 +5,7 @@ import WelcomeScreen from '../screens/WelcomeScreen'
 import OnboardingScreen from '../screens/OnboardingScreen'
 import GetYouInScreen from '../screens/SignUp/GetYouInScreen'
 import { LandingScreen, LoginScreen, OnboardingChoiceScreen, OnboardingOptionsScreen, SignupScreen, UploadPictureScreen, VerifyAccount } from '../screens'
+import BottomTabNavigation from './BottomTabNavigation'
 
 const Stack = createNativeStackNavigator()
 
@@ -22,6 +23,7 @@ const AppNavigation = () => {
         <Stack.Screen name="LandingScreen" component={LandingScreen} />
         <Stack.Screen name="OnboardingChoice" component={OnboardingChoiceScreen} />
         <Stack.Screen name="OnboardingOptions" component={OnboardingOptionsScreen} />
+        <Stack.Screen name="HomeScreen" component={BottomTabNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   )
