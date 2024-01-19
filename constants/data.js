@@ -42,8 +42,7 @@ export const onboardingOptions = [
         id: 1,
         title: "Drivers License",
         subTitle: "Please upload your drivers license",
-        extraDescription: "All four sides of the license should be photographed. Ensure that the license number in the top-left-hand \
-        corner is clearly visible in the image photographed",
+        extraDescription: "All four sides of the license should be photographed. Ensure that the license number in the top-left-hand corner is clearly visible in the image photographed",
         screenType: "image",
     },
     {
