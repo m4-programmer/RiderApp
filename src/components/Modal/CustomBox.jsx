@@ -5,24 +5,23 @@ import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
 const Circle = () => {
     return <View className='' style={styles.circle} >
-                <Text className='font-semibold' style={{fontSize: 20,}}>#</Text>
+            <Text className='font-semibold' style={{fontSize: 20,}}>#</Text>
     </View>
 }
-const CustomBox = ({title, subTitle, Action}) => {
-    const modifiedSubTitle = subTitle.length >= 34 ? `${subTitle}\n` : subTitle;
-    console.log(subTitle.length >= 34 ? `${subTitle} `+ "\n" : subTitle);
+const CustomBox = ({title, subTitle, Action,completed}) => {
+    
   return (
-    <TouchableOpacity onPress={Action} className='flex-1 flex-row justify-between items-center' style={styles.container}>
+    <TouchableOpacity onPress={Action} className='flex-1 flex-row justify-between items-center' style={[styles.container, {borderColor: completed && COLORS.mildLight,
+        borderWidth: completed && 0.5,}]}>
       {/* Left side */}
-      <View className='flex-row gap-2 ' style={styles.left}>
+      <View className='flex-row gap-2  ' style={styles.left}>
            <Circle  /> 
-            <View className='' style={{flexWrap: 'wrap', }}>
-                <Text className='text-white font-semibold py-1' style={{fontSize: 18}}>{title}</Text>
-                {modifiedSubTitle.split('\n').map((text, index) => (
-            <Text key={index} style={{ color: COLORS.mildLight, fontSize: 14 }}>
-              {text}
-            </Text>
-          ))}
+            <View className='p-1' style={{ width: '80%', }}>
+                <Text className='text-white font-semibold py-2' style={{fontSize: 18}}>{title}</Text>
+                <Text  style={{ color: COLORS.mildLight, fontSize: 14, textAlign: 'left', }}>
+                {subTitle}
+                </Text>
+          
             </View>
       </View>
 
@@ -41,16 +40,18 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.inputColor,
         width: '100%',
         borderRadius: 15,
-        padding: 25,
-        gap: 15,
-        // flex: 1,
+        padding: 20,
+        gap: 10,
+        overflow: 'hidden',
+        marginVertical: 5,        
     },
     left: {
         alignItems: 'center',
-        flexWrap: 'wrap'
+        justifyContent: 'space-between',
+        width: '96%',
     },
     right: {
-
+        paddingRight: 20,
     },
     circle: {
         backgroundColor: COLORS.primary,
